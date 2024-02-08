@@ -1,0 +1,52 @@
+{
+  "name": "chakraform",
+  "version": "0.0.1",
+  "description": "An utility to create forms using chakraUI and react-hook-forms using a json object, also supports zod schema for validation.",
+  "main": "index.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "chakraForm"
+  },
+  "keywords": [
+    "ChakraUI",
+    "react-hook-form",
+    "zod",
+    "form",
+    "simple",
+    "json-to-form"
+  ],
+  "author": "Diego Salazar",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "zod": "^3.22.4"
+  },
+  "peerDependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@hookform/resolvers": "^3.3.4",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@formkit/auto-animate": "^0.8.1",
+    "@types/react": "^18.2.55",
+    "framer-motion": "^11.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
+    "react-hook-form": "^7.50.1",
+    "react-icons": "^5.0.1"
+  },
+  "dependencies": {}
+}
