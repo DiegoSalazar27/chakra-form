@@ -4,6 +4,7 @@ import {
   HStack,
   Box,
   UseRadioGroupReturn,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
 import { useController } from "react-hook-form";
@@ -11,6 +12,9 @@ import { SelectValues } from "../../hooks/useJsonToForm";
 
 function RadioCard(props: ReturnType<UseRadioGroupReturn["getRadioProps"]>) {
   const { getInputProps, getRadioProps } = useRadio(props);
+  const color = useColorModeValue("gray.800", "white");
+  const checkedColor = useColorModeValue("white", "gray.800");
+  const bgCheckedColor = useColorModeValue("gray.800", "white");
 
   const input = getInputProps();
   const checkbox = getRadioProps();
@@ -25,11 +29,12 @@ function RadioCard(props: ReturnType<UseRadioGroupReturn["getRadioProps"]>) {
         borderRadius="lg"
         borderColor={"primary.400"}
         boxShadow="md"
-        bg={"white"}
+        bg={"transparent"}
+        color={color}
         _checked={{
-          bg: "primary.400",
-          color: "white",
-          borderColor: "primary.400",
+          bg: bgCheckedColor,
+          color: checkedColor,
+          borderColor: "white",
         }}
         _focus={{
           boxShadow: "outline",

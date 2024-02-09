@@ -1,5 +1,4 @@
 import {
-  Checkbox,
   FormControl,
   FormErrorMessage,
   FormLabel,
@@ -15,7 +14,6 @@ import React from "react";
 import DropZone from "../dropzone/dropZone";
 import { ChakraRadioGroup } from "../radioGroup/radioGroup";
 import {
-  FieldError,
   Path,
   useController,
   useFormContext,
