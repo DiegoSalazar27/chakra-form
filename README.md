@@ -1,6 +1,6 @@
 # README
 
-An utility to create forms using chakraUI and react-hook-forms using a json object, also supports zod schema for validation.
+Utility to create forms using chakraUI and react-hook-forms using a json object, also supports zod schema for validation.
 
 Supports DarkMode
 
