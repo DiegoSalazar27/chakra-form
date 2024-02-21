@@ -16,7 +16,6 @@
     "@emotion/styled": "^11.11.0",
     "@formkit/auto-animate": "^0.8.1",
     "@hookform/resolvers": "^3.3.4",
-    "chakraform": "link:E:/code/portfolio/chakraForm",
     "framer-motion": "^11.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

@@ -9,8 +9,8 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
-import { Form } from "chakraform/src/components/form";
 import { PropsTable } from "./components/propsTable";
+import { Form } from "./components/form";
 
 function App() {
   const { toggleColorMode, colorMode } = useColorMode();
