@@ -1,27 +1,25 @@
 {
-  "include": ["src"], /* Include only the src directory */
-  "excluse": [
-    "dist",
-    "node_modules"
-  ],
   "compilerOptions": {
-    "target": "ES2022",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
-    "module": "ESNext",                                /* Specify what module code is generated. */
-    "lib": ["dom", "ESNext"],
-    "importHelpers": true,                               /* Specify a set of bundled library declaration files that describe the target runtime environment. */
-    "declaration": true,
-    "sourceMap": true,                                /* Create source map files for emitted JavaScript files. */
-    "rootDir": "./src",
-    "outDir": "./dist/esm",                                   /* Specify an output folder for all emitted files. */
-    "strict": true,                                      /* Enable all strict type-checking options. */
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "moduleResolution": "node",
-    "jsx": "react",
-    "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
-    "skipLibCheck": true,                          /* Skip type checking all .d.ts files. */
-    "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
-  }
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

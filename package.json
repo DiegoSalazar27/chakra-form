@@ -1,53 +1,40 @@
 {
-  "name": "@diegosalazar27/chakraform",
-  "version": "0.0.1",
-  "description": "Utility to create forms using chakraUI and react-hook-forms using a json object, also supports zod schema for validation.",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "types": "./dist/esm/index.d.ts",
-  "files": [
-    "dist",
-    "LICENSE",
-    "README.md"
-  ],
+  "name": "chakraformexample",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "build": "npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc",
-    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DiegoSalazar27/chakra-form"
-  },
-  "keywords": [
-    "React",
-    "ChakraUI",
-    "react-hook-form",
-    "zod",
-    "form",
-    "simple",
-    "json-to-form"
-  ],
-  "author": "Diego Salazar",
-  "license": "ISC",
-  "devDependencies": {
-    "typescript": "^5.3.3"
-  },
-  "peerDependencies": {
+  "dependencies": {
     "@chakra-ui/react": "^2.8.2",
-    "@hookform/resolvers": "^3.3.4",
+    "@diegosalazar27/chakraform": "^0.0.1",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@formkit/auto-animate": "^0.8.1",
-    "@types/react": "^18.2.55",
+    "@hookform/resolvers": "^3.3.4",
+    "chakraform": "link:E:/code/portfolio/chakraForm",
     "framer-motion": "^11.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
     "react-hook-form": "^7.50.1",
     "react-icons": "^5.0.1",
-    "zod": "^3.22.4"
+    "zod": "3.22.4"
   },
-  "dependencies": {}
+  "devDependencies": {
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.0"
+  }
 }

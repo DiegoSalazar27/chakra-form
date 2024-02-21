@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { GenericFormWrapper } from "../../../dist/esm";
+import { GenericFormWrapper } from "@diegosalazar27/chakraform";
 import { Box, HStack } from "@chakra-ui/react";
 import { useState } from "react";
 
