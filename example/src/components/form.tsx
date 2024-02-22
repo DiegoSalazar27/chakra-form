@@ -4,11 +4,12 @@ import { Box, HStack } from "@chakra-ui/react";
 import { useState } from "react";
 
 const schema = z.object({
-  text: z.string(),
+  text: z.string().min(4),
   date: z.string(),
   select: z.string(),
   radioGroup: z.string(),
   switch: z.boolean(),
+  test: z.string({ required_error: "REQUIRED" }),
 });
 
 export function Form() {
@@ -26,6 +27,7 @@ export function Form() {
         handleSubmit={handleSubmit}
         initialValues={{
           text: "",
+          test: "",
           date: new Date().toISOString().split("T")[0],
           select: "1",
           radioGroup: "1",
@@ -37,6 +39,12 @@ export function Form() {
             type: "text",
             label: "Name",
             placeholder: "Jhon",
+          },
+          {
+            id: "test",
+            type: "textarea",
+            label: "ASASA",
+            placeholder: "ASASA",
           },
           {
             id: "date",

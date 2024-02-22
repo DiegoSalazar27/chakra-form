@@ -2,7 +2,7 @@ import { VStack, Button } from "@chakra-ui/react";
 import React from "react";
 import { FieldValues, FormProvider, useForm } from "react-hook-form";
 import { DefaultValues } from "react-hook-form/dist/types";
-import { ZodType, ZodTypeDef } from "zod";
+import { z } from "zod";
 import useJsonToForm, { FormField } from "../../hooks/useJsonToForm";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -10,7 +10,7 @@ interface FormWrapperParams<T> {
   initialValues: T;
   handleSubmit: (data: T) => any;
   jsonFormFields: FormField<T>[];
-  schema: ZodType<unknown, ZodTypeDef, unknown>;
+  schema: z.Schema;
   buttonText: string;
   submitingButtonText: string;
 }
@@ -43,7 +43,11 @@ function GenericFormWrapper<T extends FieldValues>({
         {formFields}
         <Button
           type="submit"
-          disabled={methods.formState.isSubmitting}
+          disabled={
+            !methods.formState.isDirty ||
+            (methods.formState.isDirty && !methods.formState.isValid) ||
+            methods.formState.isSubmitting
+          }
           isLoading={methods.formState.isSubmitting}
           loadingText={submitingButtonText}
         >

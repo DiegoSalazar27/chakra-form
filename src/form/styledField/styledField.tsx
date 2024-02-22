@@ -13,32 +13,15 @@ import CustomSwitch from "../switch/switch";
 import React from "react";
 import DropZone from "../dropzone/dropZone";
 import { ChakraRadioGroup } from "../radioGroup/radioGroup";
-import {
-  Path,
-  useController,
-  useFormContext,
-} from "react-hook-form";
-
-// function typeToComponent(type: string): ComponentWithAs<any> {
-//   if (type === "textarea") {
-//     return Textarea;
-//   }
-
-//   if (type === "checkbox") {
-//     return Checkbox;
-//   }
-
-//   return Input;
-// }
+import { Path, useController } from "react-hook-form";
 
 export default function StyledField<T>(props: FormField<T>) {
   const [parent] = useAutoAnimate();
   const { field, fieldState } = useController<FormField<T>>({
     name: props.id.toString() as Path<FormField<T>>,
   });
-  const { formState } = useFormContext();
 
-  const error = formState.errors[props.id as string];
+  const error = fieldState.invalid;
   const touched: boolean = fieldState.isTouched;
 
   const inputComponent = useCallback(
@@ -96,14 +79,14 @@ export default function StyledField<T>(props: FormField<T>) {
   );
 
   return (
-    <FormControl ref={parent} isInvalid={!!error && touched}>
+    <FormControl ref={parent} isInvalid={error && touched}>
       {props.label && (
         <FormLabel htmlFor={props.id as string}>{props.label}</FormLabel>
       )}
 
       {props.component || inputComponent(props)}
 
-      <FormErrorMessage>{error?.message?.toString()}</FormErrorMessage>
+      <FormErrorMessage>{fieldState.error?.message}</FormErrorMessage>
     </FormControl>
   );
 }
